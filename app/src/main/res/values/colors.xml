@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorPrimary">#3F7CAC</color>
+    <color name="colorPrimaryDark">#364985</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="colorInActive">#050505</color>
+    <color name="colorActive">#7fc8ec</color>
+    <color name="colorBarBg">#fdfdfd</color>
+
+    <color name="colorBike">#D8BFD8</color>
+    <color name="colorUnBike">#EE82EE</color>
+    <color name="colorRun">#BA55D3</color>
+    <color name="colorUnRun">#8A2BE2</color>
+    <color name="colorBus">#B0C4DE</color>
+    <color name="colorUnBus">#00BFFF</color>
+    <color name="hotarticle">#666768</color>
+    <color name="hotarticletime">#adaeaf</color>
+    <color name="hotarticleauthor">#2f3030</color>
+    <color name="hotarticlecontent">#1e1e1e</color>
+    <color name="tag">#f7b418</color>
+    <color name="tag2">#f94d22</color>
+
+    <color name="blue_200">#FF90CAF9</color>
+    <color name="blue_500">#FF2196F3</color>
+    <color name="blue_700">#FF1976D2</color>
 </resources>

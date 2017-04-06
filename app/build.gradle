@@ -29,5 +29,8 @@ dependencies {
     compile 'com.jakewharton.rxbinding:rxbinding:0.4.0'
     compile 'com.android.support:multidex:1.0.1'
     compile 'com.jakewharton:butterknife:7.0.1'
-
+    compile 'com.jude:rollviewpager:1.4.6'
+    compile 'com.github.arimorty:floatingsearchview:2.0.3'
+    compile 'com.beardedhen:androidbootstrap:2.3.0'
+    compile 'com.github.mthli:Knife:v1.1'
 }

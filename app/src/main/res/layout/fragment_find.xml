@@ -1,10 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:orientation="vertical">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <com.jude.rollviewpager.RollPagerView
+        android:id="@+id/roll_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        app:rollviewpager_hint_gravity="right"
+        app:rollviewpager_play_delay="3000">
+
+        <com.beardedhen.androidbootstrap.BootstrapCircleThumbnail
+            android:id="@+id/zhuyeHeaderImg"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            app:hasBorder="false"
+            android:src="@mipmap/timg"/>
+
+        <TextView
+            android:id="@+id/tx"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Jack"
+            android:textColor="@color/colorBarBg"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:layout_marginTop="42dp"
+            android:layout_toRightOf="@+id/zhuyeHeaderImg"
+            android:layout_toEndOf="@+id/zhuyeHeaderImg"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Title"
+            android:textSize="40sp"
+            android:layout_marginTop="15dp"
+            android:textColor="@color/colorBarBg"
+            android:textStyle="bold"
+            android:layout_toRightOf="@+id/tx"
+            android:layout_centerHorizontal="true"/>
+
+    </com.jude.rollviewpager.RollPagerView>
+
+
+    <com.arlib.floatingsearchview.FloatingSearchView
+        android:id="@+id/floating_search_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:floatingSearch_searchBarMarginLeft="1dp"
+        app:floatingSearch_searchBarMarginTop="1dp"
+        app:floatingSearch_searchBarMarginRight="1dp"
+        app:floatingSearch_searchHint="搜索..."
+        app:floatingSearch_suggestionsListAnimDuration="250"
+        app:floatingSearch_showSearchKey="false"
+        app:floatingSearch_leftActionMode="showSearch"
+        app:floatingSearch_close_search_on_keyboard_dismiss="true"
+        android:alpha="0.7"
+        android:layout_below="@+id/roll_view_pager"/>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="3dip"
+        android:layout_height="15dp"
+        android:background="@color/colorPrimary"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="247dp"
+        android:layout_marginLeft="5dp"/>
+
+    <TextView
+        android:id="@+id/hottext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="热门文章"
+        android:layout_toRightOf="@+id/divider"
+        android:layout_marginTop="245dp"
+        android:layout_marginLeft="10dp"
+        android:textStyle="bold"
+        android:textColor="@color/hotarticle"/>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Find"/>
-</LinearLayout>
+        android:text="▼下拉刷新"
+        android:layout_toRightOf="@+id/hottext"
+        android:layout_marginTop="245dp"
+        android:textStyle="bold"
+        android:layout_marginLeft="213dp"
+        android:textColor="@color/hotarticletime"/>
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/swipe_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/hottext"
+        android:layout_marginTop="10dp">
+
+    <ListView
+        android:id="@+id/zhuye_listview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:footerDividersEnabled="false"/>
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+</RelativeLayout>

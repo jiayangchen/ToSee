@@ -7,4 +7,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Follow"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/img1"/>
 </LinearLayout>
