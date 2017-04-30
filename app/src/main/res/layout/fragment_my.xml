@@ -2,9 +2,153 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:orientation="vertical">
-    <TextView
-        android:layout_width="wrap_content"
+              android:orientation="vertical"
+    android:background="@color/colorBarBg">
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/person"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
+        android:foreground="?android:attr/selectableItemBackgroundBorderless"
+        android:clickable="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            xmlns:fresco="http://schemas.android.com/apk/res-auto">
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/personHeader"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                fresco:actualImageScaleType="centerCrop"
+                fresco:placeholderImage="@mipmap/zhanwei"
+                fresco:placeholderImageScaleType="fitCenter"
+                fresco:failureImage="@mipmap/zhanwei"
+                fresco:failureImageScaleType="fitCenter"
+                fresco:roundAsCircle="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20dp"/>
+
+            <TextView
+                android:id="@+id/personName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/personHeader"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="60dp"/>
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/pencil1"
+                android:layout_toRightOf="@+id/personName"
+                android:background="#00000000"
+                android:layout_marginTop="60dp"
+                android:layout_alignParentEnd="true"/>
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="My"/>
+        android:layout_below="@+id/person"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/item1"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:foreground="?android:attr/selectableItemBackgroundBorderless"
+                android:clickable="true">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@mipmap/historyarticle"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="20dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="60dp"
+                    android:textSize="18sp"
+                    android:text="历史文章"/>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/item2"
+                android:layout_below="@+id/item1"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="1dp"
+                android:foreground="?android:attr/selectableItemBackgroundBorderless"
+                android:clickable="true">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@mipmap/timeline1"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="20dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="60dp"
+                    android:textSize="18sp"
+                    android:text="时间轴"/>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/item3"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_below="@+id/item2"
+                android:layout_marginTop="1dp"
+                android:foreground="?android:attr/selectableItemBackgroundBorderless"
+                android:clickable="true">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@mipmap/settings"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="20dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="60dp"
+                    android:textSize="18sp"
+                    android:text="设置" />
+
+            </android.support.v7.widget.CardView>
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+
 </LinearLayout>

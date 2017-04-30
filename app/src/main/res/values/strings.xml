@@ -37,4 +37,7 @@
     <string name="toast_quote">Quote</string>
     <string name="toast_insert_link">Insert link</string>
     <string name="toast_format_clear">Format clear</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

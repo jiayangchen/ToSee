@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/hotarticle"
+        android:layout_width="350dp"
+        android:layout_height="270dp"
+        android:foreground="?android:attr/selectableItemBackgroundBorderless"
+        android:clickable="true"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="10dp"
+        card_view:cardElevation="2dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            xmlns:fresco="http://schemas.android.com/apk/res-auto">
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/cateHeader"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                fresco:actualImageScaleType="centerCrop"
+                fresco:placeholderImage="@mipmap/zhanwei"
+                fresco:placeholderImageScaleType="fitCenter"
+                fresco:failureImage="@mipmap/zhanwei"
+                fresco:failureImageScaleType="fitCenter"
+                fresco:roundAsCircle="true"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"/>
+
+            <TextView
+                android:id="@+id/cateAuthor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/cateHeader"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:textColor="@color/black"/>
+
+            <ImageView
+                android:id="@+id/cate_where"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/map"
+                android:layout_marginLeft="250dp"
+                android:layout_toRightOf="@+id/cateHeader"
+                android:layout_marginTop="15dp"/>
+
+            <TextView
+                android:id="@+id/cate_place"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/cate_where"
+                android:layout_marginTop="15dp"/>
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                xmlns:fresco="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/cateMainImg"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                fresco:actualImageScaleType="centerCrop"
+                fresco:placeholderImage="@mipmap/zhanwei"
+                fresco:placeholderImageScaleType="fitCenter"
+                fresco:failureImage="@mipmap/zhanwei"
+                fresco:failureImageScaleType="fitCenter"
+                android:layout_marginTop="8dp"
+                android:layout_below="@+id/cateHeader"/>
+
+            <TextView
+                android:id="@+id/cateTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cateMainImg"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="10dp"/>
+
+            <TextView
+                android:id="@+id/cateText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cateTitle"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="5dp"/>
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>

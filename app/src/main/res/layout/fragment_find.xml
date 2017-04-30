@@ -3,16 +3,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical">
+    xmlns:fresco="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@color/colorBarBg">
 
     <com.jude.rollviewpager.RollPagerView
         android:id="@+id/roll_view_pager"
         android:layout_width="match_parent"
-        android:layout_height="180dp"
+        android:layout_height="160dp"
         app:rollviewpager_hint_gravity="right"
         app:rollviewpager_play_delay="3000">
 
-        <com.beardedhen.androidbootstrap.BootstrapCircleThumbnail
+        <!--<com.beardedhen.androidbootstrap.BootstrapCircleThumbnail
             android:id="@+id/zhuyeHeaderImg"
             android:layout_width="50dp"
             android:layout_height="50dp"
@@ -20,13 +22,28 @@
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
             app:hasBorder="false"
-            android:src="@mipmap/timg"/>
+            android:src="@mipmap/timg"/>-->
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            xmlns:fresco="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/zhuyeHeaderImg"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            fresco:actualImageScaleType="centerCrop"
+            fresco:placeholderImage="@mipmap/zhanwei"
+            fresco:placeholderImageScaleType="fitCenter"
+            fresco:failureImage="@mipmap/zhanwei"
+            fresco:failureImageScaleType="fitCenter"
+            fresco:roundAsCircle="true"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"/>
 
         <TextView
             android:id="@+id/tx"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Jack"
+            android:text="陈嘉扬"
             android:textColor="@color/colorBarBg"
             android:textStyle="bold"
             android:textSize="15sp"
@@ -34,21 +51,29 @@
             android:layout_toRightOf="@+id/zhuyeHeaderImg"
             android:layout_toEndOf="@+id/zhuyeHeaderImg"/>
 
-        <TextView
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@mipmap/search"
+            android:layout_toRightOf="@+id/tx"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="230dp"/>
+
+        <!--<TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Title"
+            android:text="景·记"
             android:textSize="40sp"
             android:layout_marginTop="15dp"
             android:textColor="@color/colorBarBg"
             android:textStyle="bold"
             android:layout_toRightOf="@+id/tx"
-            android:layout_centerHorizontal="true"/>
+            android:layout_centerHorizontal="true"/>-->
 
     </com.jude.rollviewpager.RollPagerView>
 
 
-    <com.arlib.floatingsearchview.FloatingSearchView
+    <!--<com.arlib.floatingsearchview.FloatingSearchView
         android:id="@+id/floating_search_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -61,52 +86,81 @@
         app:floatingSearch_leftActionMode="showSearch"
         app:floatingSearch_close_search_on_keyboard_dismiss="true"
         android:alpha="0.7"
-        android:layout_below="@+id/roll_view_pager"/>
+        android:layout_below="@+id/roll_view_pager"/>-->
 
     <View
-        android:id="@+id/divider"
+        android:id="@+id/divider1"
         android:layout_width="3dip"
         android:layout_height="15dp"
         android:background="@color/colorPrimary"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="247dp"
+        android:layout_marginTop="170dp"
+        android:layout_marginLeft="5dp"/>
+
+    <TextView
+        android:id="@+id/hotcolumn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="热门专栏"
+        android:layout_toRightOf="@+id/divider1"
+        android:layout_marginTop="168dp"
+        android:layout_marginLeft="10dp"
+        android:textStyle="bold"
+        android:textColor="@color/hotarticle"/>
+
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:layout_below="@+id/hotcolumn">
+
+        <LinearLayout
+            android:id="@+id/zhuye_hotcolumn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="3dip"
+        android:layout_height="15dp"
+        android:background="@color/colorPrimary"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="280dp"
         android:layout_marginLeft="5dp"/>
 
     <TextView
         android:id="@+id/hottext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="热门文章"
-        android:layout_toRightOf="@+id/divider"
-        android:layout_marginTop="245dp"
+        android:text="推荐文章"
+        android:layout_toRightOf="@+id/divider2"
+        android:layout_marginTop="278dp"
         android:layout_marginLeft="10dp"
         android:textStyle="bold"
         android:textColor="@color/hotarticle"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="▼下拉刷新"
-        android:layout_toRightOf="@+id/hottext"
-        android:layout_marginTop="245dp"
-        android:textStyle="bold"
-        android:layout_marginLeft="213dp"
-        android:textColor="@color/hotarticletime"/>
 
-    <android.support.v4.widget.SwipeRefreshLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/swipe_container"
+    <HorizontalScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/hottext"
-        android:layout_marginTop="10dp">
+        android:scrollbars="none"
+        android:layout_below="@+id/hottext">
 
-    <ListView
-        android:id="@+id/zhuye_listview"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:footerDividersEnabled="false"/>
+        <LinearLayout
+            android:id="@+id/zhuye_hotarticle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-    </android.support.v4.widget.SwipeRefreshLayout>
+        </LinearLayout>
+
+    </HorizontalScrollView>
 
 </RelativeLayout>

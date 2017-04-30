@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    tools:context="com.jianshu_.ReviewResultActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/review_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="初审结果"
+            android:textSize="15sp"/>
+
+        <TextView
+            android:id="@+id/reviewAct_reedit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="继续修改"
+            android:layout_marginLeft="230dp"
+            android:textColor="@color/jianshu"
+            android:gravity="right"
+            android:textSize="15sp"
+            android:clickable="true"/>
+
+    </android.support.v7.widget.Toolbar>
+
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp">
+
+        <TextView
+            android:id="@+id/reviewAct_result1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="本文文笔优美清爽，富有一定的哲理性。文中写“我”在大海边散步，大海不仅给予“我”美的享受，还引起“我”的沉思以及联想，可谓是大海给了我畅游的空间，“我”为大海注如入了生命，使大海成为一个具有高尚人格气力的“人”。本文读后给人以愉悦感，引人深思。"/>
+
+    </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_reviewer1"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_below="@+id/review_toolbar"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            card_view:cardBackgroundColor="@color/colorPrimary">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                xmlns:fresco="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/result_reviewer1_header"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                fresco:actualImageScaleType="centerCrop"
+                fresco:placeholderImage="@mipmap/zhanwei"
+                fresco:placeholderImageScaleType="fitCenter"
+                fresco:failureImage="@mipmap/zhanwei"
+                fresco:failureImageScaleType="fitCenter"
+                fresco:roundAsCircle="true"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="8dp"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="评审1"
+                android:textSize="20sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/colorBarBg"
+                android:layout_toRightOf="@+id/result_reviewer1_header"/>
+
+            <TextView
+                android:id="@+id/reviewAct_reviewer1_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="reviewer1"
+                android:textSize="15sp"
+                android:layout_marginTop="35dp"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/colorBarBg"
+                android:layout_toRightOf="@+id/result_reviewer1_header"/>
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:layout_marginTop="380dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp">
+
+        <TextView
+            android:id="@+id/reviewAct_result2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="本文无论是思想性还是艺术性都是很高的，读后让人久久回味。构思巧妙，运用对比手法，深化了主题；情节也颇具巧妙的心思，整个故事既出人意料之外，又在常情道理之中。语言朴实无华，采用白描手法，作者的爱憎包含在叙述之中，能让读者去体会，去深思。"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_below="@+id/review_toolbar"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="280dp"
+        card_view:cardBackgroundColor="@color/colorPrimary">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                xmlns:fresco="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/result_reviewer2_header"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                fresco:actualImageScaleType="centerCrop"
+                fresco:placeholderImage="@mipmap/zhanwei"
+                fresco:placeholderImageScaleType="fitCenter"
+                fresco:failureImage="@mipmap/zhanwei"
+                fresco:failureImageScaleType="fitCenter"
+                fresco:roundAsCircle="true"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="8dp"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="评审2"
+                android:textSize="20sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/colorBarBg"
+                android:layout_toRightOf="@+id/result_reviewer2_header"/>
+
+            <TextView
+                android:id="@+id/reviewAct_reviewer2_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="reviewer2"
+                android:textSize="15sp"
+                android:layout_marginTop="35dp"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/colorBarBg"
+                android:layout_toRightOf="@+id/result_reviewer2_header"/>
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>

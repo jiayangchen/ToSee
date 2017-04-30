@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.jianshu_.RegisterActivity">
+
+    <EditText
+        android:id="@+id/reg_username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="username"/>
+
+    <EditText
+        android:id="@+id/reg_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="password"
+        android:inputType="textPassword"
+        android:layout_below="@+id/reg_username"/>
+
+
+    <EditText
+        android:id="@+id/reg_epassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="ensure password"
+        android:inputType="textPassword"
+        android:layout_below="@+id/reg_password"/>
+
+
+    <EditText
+        android:id="@+id/reg_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="eamil"
+        android:inputType="textEmailAddress"
+        android:layout_below="@+id/reg_epassword"/>
+
+    <Button
+        android:id="@+id/regBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="register"
+        android:layout_below="@+id/reg_email"/>
+
+</RelativeLayout>

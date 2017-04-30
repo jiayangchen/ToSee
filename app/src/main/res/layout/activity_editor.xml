@@ -3,12 +3,37 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/colorBarBg">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="写文章"
+            android:textSize="15sp"/>
+
+        <TextView
+            android:id="@+id/publish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="发布"
+            android:textColor="#b75c5c"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            android:textSize="15sp"
+            android:clickable="true"/>
+
+        </RelativeLayout>
 
     </android.support.v7.widget.Toolbar>
 
@@ -37,7 +62,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:scrollbars="none"
-        android:background="@color/colorInActive">
+        android:background="#b75c5c">
 
         <LinearLayout android:orientation="horizontal"
             android:layout_width="wrap_content"
@@ -52,11 +77,47 @@
                 android:background="?android:selectableItemBackground">
             </ImageButton>
 
+            <ImageButton android:id="@+id/undo"
+                android:contentDescription="@null"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/ic_action_undo"
+                android:scaleType="center"
+                android:background="?android:selectableItemBackground">
+            </ImageButton>
+
+            <ImageButton android:id="@+id/redo"
+                android:contentDescription="@null"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/ic_action_redo"
+                android:scaleType="center"
+                android:background="?android:selectableItemBackground">
+            </ImageButton>
+
+            <ImageButton android:id="@+id/edit_image"
+                android:contentDescription="@null"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@mipmap/image"
+                android:scaleType="center"
+                android:background="?android:selectableItemBackground">
+            </ImageButton>
+
             <ImageButton android:id="@+id/italic"
                 android:contentDescription="@null"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:src="@drawable/ic_format_italic"
+                android:scaleType="center"
+                android:background="?android:selectableItemBackground">
+            </ImageButton>
+
+            <ImageButton android:id="@+id/bullet"
+                android:contentDescription="@null"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/ic_format_bullet"
                 android:scaleType="center"
                 android:background="?android:selectableItemBackground">
             </ImageButton>
@@ -79,14 +140,7 @@
                 android:background="?android:selectableItemBackground">
             </ImageButton>
 
-            <ImageButton android:id="@+id/bullet"
-                android:contentDescription="@null"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:src="@drawable/ic_format_bullet"
-                android:scaleType="center"
-                android:background="?android:selectableItemBackground">
-            </ImageButton>
+
 
             <ImageButton android:id="@+id/quote"
                 android:contentDescription="@null"

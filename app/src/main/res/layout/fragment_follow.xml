@@ -2,14 +2,135 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:orientation="vertical">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Follow"/>
+              android:orientation="vertical"
+    android:background="@color/colorBarBg">
 
-    <ImageView
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginBottom="5dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="景 · 记"
+            android:textStyle="bold"
+            android:layout_marginTop="5dp"
+            android:textSize="18sp"
+            android:textColor="@color/jianshu"
+            android:layout_marginLeft="140dp"/>
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.Toolbar>
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:layout_gravity="top">
+
+    <LinearLayout
+        android:id="@+id/cate_catetaglist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+    <!--<TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@mipmap/img1"/>
+        android:text="国内"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp"
+        android:textSize="15sp"
+        android:textColor="@color/jianshu"
+        android:background="@drawable/tvbar2"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="国外"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
+            android:textSize="15sp"
+            android:textColor="@color/jianshu"
+            android:background="@drawable/tvbar2"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="记情"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
+            android:textSize="15sp"
+            android:textColor="@color/jianshu"
+            android:background="@drawable/tvbar2"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="写景"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
+            android:textSize="15sp"
+            android:textColor="@color/jianshu"
+            android:background="@drawable/tvbar2"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="自然风光"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
+            android:textSize="15sp"
+            android:textColor="@color/jianshu"
+            android:background="@drawable/tvbar2"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="社会人文"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
+            android:textSize="15sp"
+            android:textColor="@color/jianshu"
+            android:background="@drawable/tvbar2"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="自然风光"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
+            android:textSize="15sp"
+            android:textColor="@color/jianshu"
+            android:background="@drawable/tvbar2"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="社会人文"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
+            android:textSize="15sp"
+            android:textColor="@color/jianshu"
+            android:background="@drawable/tvbar2"
+            android:layout_marginRight="10dp"/>-->
+
+    </LinearLayout>
+
+    </HorizontalScrollView>
+
+    <ListView
+        android:id="@+id/cate_listview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </ListView>
 </LinearLayout>

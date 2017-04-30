@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="5dp"
+        android:clickable="false"
+        android:background="@color/colorBarBg">
+
+    <TextView
+        android:id="@+id/timeline_datetime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:text="23:59"
+        android:textSize="22dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_marginTop="15dp"/>
+
+    <TextView
+        android:id="@+id/show_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:textSize="12dp"
+        android:layout_marginTop="50dp" />
+
+    <View
+        android:id="@+id/view_2"
+        android:layout_width="3dp"
+        android:layout_height="80dp"
+        android:layout_below="@+id/image"
+        android:layout_marginLeft="100dp"
+        android:background="@color/colorPrimary"/>
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_marginLeft="95dp"
+        android:background="@drawable/circle"
+        android:layout_marginTop="30dp"/>
+
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:id="@+id/zhuye_article_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:textColor="@color/black"
+        android:layout_marginLeft="125dp"
+        android:layout_marginTop="50dp"
+        android:clickable="true"/>
+
+        <RelativeLayout
+            android:id="@+id/reviewers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="120dp">
+
+            <com.beardedhen.androidbootstrap.BootstrapCircleThumbnail
+                android:id="@+id/reviewer1"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@mipmap/timg"
+                app:hasBorder="false"/>
+
+            <TextView
+                android:id="@+id/review1_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#02415e"
+                android:layout_toRightOf="@+id/reviewer1"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"/>
+
+            <com.beardedhen.androidbootstrap.BootstrapCircleThumbnail
+                android:id="@+id/reviewer2"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@mipmap/timg"
+                app:hasBorder="false"
+                android:layout_below="@+id/reviewer1"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:id="@+id/review2_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#02415e"
+                android:layout_toRightOf="@+id/reviewer1"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="22dp"
+                android:layout_below="@+id/review1_name"/>
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+</RelativeLayout>

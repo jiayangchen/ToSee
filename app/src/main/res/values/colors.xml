@@ -24,4 +24,13 @@
     <color name="blue_200">#FF90CAF9</color>
     <color name="blue_500">#FF2196F3</color>
     <color name="blue_700">#FF1976D2</color>
+    <color name="jianshu">#b75c5c</color>
+
+    <color name="red">#EE4000</color>
+    <color name="white">#ffffff</color>
+
+
+    <color name="timeline1">#e6a009</color>
+    <color name="timeline2">#931b0e</color>
+
 </resources>

@@ -22,10 +22,6 @@ import com.jianshu_.fragment.main.FindFragment;
 import com.jianshu_.fragment.main.FollowFragment;
 import com.jianshu_.fragment.main.MessageFragment;
 import com.jianshu_.fragment.main.MyFragment;
-import com.jude.rollviewpager.OnItemClickListener;
-import com.jude.rollviewpager.RollPagerView;
-import com.jude.rollviewpager.adapter.LoopPagerAdapter;
-import com.jude.rollviewpager.hintview.ColorPointHintView;
 
 import butterknife.Bind;
 
@@ -46,6 +42,7 @@ public class MainActivity extends BaseActivity {
     private FragmentTransaction ft;
     private FragmentManager fm;
 
+    private String user_hash;
 
     @Override
     public int initView(Bundle savedInstanceState) {
@@ -56,6 +53,9 @@ public class MainActivity extends BaseActivity {
     public void initData(Bundle savedInstanceState) {
         super.initData(savedInstanceState);
 
+        Intent intent = getIntent();
+        user_hash = intent.getStringExtra("user_hash");
+
         mBbBottom.setMode(BottomNavigationBar.MODE_SHIFTING);
         mBbBottom.setBackgroundStyle(BottomNavigationBar.BACKGROUND_STYLE_STATIC);
         mBbBottom
@@ -64,12 +64,12 @@ public class MainActivity extends BaseActivity {
                 .setBarBackgroundColor(R.color.colorBarBg);//设置整个控件的背景色
 
         //设置徽章
-        badge=new BadgeItem()
+        //badge=new BadgeItem()
 //                .setBorderWidth(2)//Badge的Border(边界)宽度
 //                .setBorderColor("#FF0000")//Badge的Border颜色
 //                .setBackgroundColor("#9ACD32")//Badge背景颜色
 //                .setGravity(Gravity.RIGHT| Gravity.TOP)//位置，默认右上角
-                .setText("2")//显示的文本
+//                .setText("2")//显示的文本
 //                .setTextColor("#F0F8FF")//文本颜色
 //                .setAnimationDuration(2000)
 //                .setHideOnSelect(true)//当选中状态时消失，非选中状态显示
@@ -84,7 +84,6 @@ public class MainActivity extends BaseActivity {
                 .initialise();//初始化BottomNavigationButton,所有设置需在调用该方法前完成
 
 //        mBbBottom.setMode(BottomNavigationBar.MODE_FIXED);
-
 
         mBbBottom.setTabSelectedListener(new BottomNavigationBar.OnTabSelectedListener() {
             @Override
@@ -109,7 +108,9 @@ public class MainActivity extends BaseActivity {
                             mCenterFragment = CenterFragment.newInstance("");
                         }
                         ft.replace(R.id.fl_content, mCenterFragment);*/
-                        startActivity(new Intent(MainActivity.this,EditorActivity.class));
+                        Intent intent1 = new Intent(MainActivity.this,EditorActivity.class);
+                        intent1.putExtra("user_hash",user_hash);
+                        startActivity(intent1);
                         break;
                     case 3:
                         if (null == mMessageFragment) {

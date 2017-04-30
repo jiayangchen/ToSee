@@ -29,4 +29,12 @@
         android:text="Login"
         android:layout_below="@+id/password"/>
 
+
+    <Button
+        android:id="@+id/jumpRegBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Goto Reg"
+        android:layout_below="@+id/loginBtn"/>
+
 </RelativeLayout>

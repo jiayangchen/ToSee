@@ -9,7 +9,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardBackgroundColor="#ffffff"
-        android:layout_marginBottom="6dp"
         app:cardElevation="0px"
         app:cardMaxElevation="2px"
         app:cardUseCompatPadding="false"
@@ -22,12 +21,13 @@
 
             <com.beardedhen.androidbootstrap.BootstrapCircleThumbnail
                 android:id="@+id/hotArticleHeader"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 app:hasBorder="false"
                 android:src="@mipmap/timg"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="8dp"/>
+                android:layout_marginTop="8dp"
+                android:layout_toRightOf="@+id/hotArticleImg"/>
 
             <TextView
                 android:id="@+id/zhuye_headerImg"
@@ -40,6 +40,7 @@
                 android:layout_marginLeft="5dp"/>
 
             <TextView
+                android:id="@+id/zhuye_article_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="2小时前"
@@ -51,66 +52,81 @@
 
             <ImageView
                 android:id="@+id/hotArticleImg"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
                 android:src="@mipmap/test"
-                android:layout_below="@+id/zhuye_headerImg"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"/>
 
             <TextView
                 android:id="@+id/zhuye_content"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="fdaddufhsdfhsaifasuldfhlsdahfausifo"
                 android:layout_toRightOf="@+id/hotArticleImg"
                 android:layout_below="@+id/zhuye_headerImg"
                 android:textStyle="normal"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:textColor="@color/hotarticlecontent"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:layout_marginTop="10dp"/>
+                android:layout_marginTop="5dp"/>
+
+            <ImageView
+                android:id="@+id/zhuye_pen"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:src="@mipmap/pen"
+                android:layout_below="@+id/zhuye_article_time"
+                android:layout_toRightOf="@+id/hotArticleImg"
+                android:layout_marginTop="58dp"
+                android:layout_marginLeft="10dp"/>
 
             <TextView
                 android:id="@+id/tag1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="标签"
+                android:text="类别"
                 android:textSize="12sp"
-                android:textColor="@color/tag"
-                android:layout_below="@+id/zhuye_content"
-                android:layout_toRightOf="@+id/hotArticleImg"
-                android:background="@drawable/tvbar"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"/>
+                android:textColor="@color/hotarticletime"
+                android:layout_below="@+id/zhuye_article_time"
+                android:layout_toRightOf="@+id/zhuye_pen"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="55dp"/>
+
+            <ImageView
+                android:id="@+id/zhuye_map"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:src="@mipmap/map"
+                android:layout_toRightOf="@+id/tag1"
+                android:layout_below="@+id/zhuye_article_time"
+                android:layout_marginTop="58dp"
+                android:layout_marginLeft="5dp"/>
 
             <TextView
                 android:id="@+id/tag2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="旅游"
+                android:text="地点"
                 android:textSize="12sp"
-                android:textColor="@color/tag2"
-                android:layout_below="@+id/zhuye_content"
-                android:layout_toRightOf="@+id/tag1"
-                android:background="@drawable/tvbar2"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"/>
+                android:textColor="@color/hotarticletime"
+                android:layout_below="@+id/zhuye_article_time"
+                android:layout_toRightOf="@+id/zhuye_map"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="55dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="阅读1292 · 评论20 · 喜欢6 · 赞赏4"
+                android:text="阅读1292 · 评论20"
                 android:layout_toRightOf="@+id/tag2"
-                android:layout_below="@+id/zhuye_content"
-                android:layout_marginTop="8dp"
+                android:layout_below="@+id/zhuye_article_time"
+                android:layout_marginTop="55dp"
                 android:textSize="12sp"
-                android:layout_marginLeft="30dp"
-                android:textColor="@color/hotarticletime"/>
+                android:layout_marginLeft="65dp"
+                android:layout_alignParentRight="true"
+                android:textColor="@color/hotarticletime" />
 
         </RelativeLayout>
 
