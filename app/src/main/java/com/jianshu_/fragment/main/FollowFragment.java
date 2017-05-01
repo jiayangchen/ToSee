@@ -35,6 +35,9 @@ import java.util.Map;
 
 public class FollowFragment extends BaseFragment {
 
+    private boolean scrollFlag = false;// 标记是否滑动
+    private int lastVisibleItemPosition;// 标记上次滑动位置
+
     BottomNavigationBar mBbBottom;
     ListView listView;
     CategoryAdapter categoryAdapter;
@@ -71,6 +74,33 @@ public class FollowFragment extends BaseFragment {
 
         listView = (ListView) mRootView.findViewById(R.id.cate_listview);
         listView.setDividerHeight(0);
+        listView.setOnScrollListener(new AbsListView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(AbsListView view, int scrollState) {
+            // TODO Auto-generated method stub
+                if (scrollState == AbsListView.OnScrollListener.SCROLL_STATE_TOUCH_SCROLL) {
+                    scrollFlag = true;
+                } else {
+                    scrollFlag = false;
+                }
+            }
+
+            @Override
+            public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+                if (scrollFlag) {
+                    if (firstVisibleItem > lastVisibleItemPosition) {
+                        mBbBottom.hide();
+                    }
+                    if (firstVisibleItem < lastVisibleItemPosition) {
+                        mBbBottom.unHide();
+                    }
+                    if (firstVisibleItem == lastVisibleItemPosition) {
+                        return;
+                    }
+                    lastVisibleItemPosition = firstVisibleItem;
+                }
+            }
+        });
         new Thread(getAllArticles).start();
     }
 
@@ -145,7 +175,7 @@ public class FollowFragment extends BaseFragment {
             // TODO
             String str = null;
             try {
-                str = getArticlesRun("http://202.120.40.139:8082/traveller/Article/MostViewed?number=10&offset=0");
+                str = getArticlesRun("http://202.120.40.139:8082/traveller/Article");
                 if(!str.isEmpty()) {
                     Message msg = new Message();
                     Bundle data = new Bundle();

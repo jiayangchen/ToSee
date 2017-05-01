@@ -134,7 +134,7 @@ public class FindFragment extends BaseFragment {
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
             Bundle data = msg.getData();
-            String val = data.getString("get_all_articles_response");
+            String val = data.getString("get_hot_articles_response");
             Log.d("hot",val);
 
             JSONObject jsonObject = null;
@@ -175,9 +175,15 @@ public class FindFragment extends BaseFragment {
                         @Override
                         public void onClick(View v) {
                             //Toast.makeText(context,String.valueOf(view.getId()),Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(context, ReadActivity.class);
-                            intent.putExtra("ar_json",json.toString());
-                            startActivity(intent);
+                            try {
+                                Intent intent = new Intent(context, ReadActivity.class);
+                                intent.putExtra("ar_json",json.toString());
+                                intent.putExtra("ar_id",json.getString("id"));
+                                startActivity(intent);
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+
                         }
                     });
 
@@ -193,17 +199,20 @@ public class FindFragment extends BaseFragment {
         }
     };
 
+
+
+
     Runnable getHotArticles = new Runnable() {
         @Override
         public void run() {
             // TODO
             String str = null;
             try {
-                str = getArticlesRun("http://202.120.40.139:8082/traveller/Article");
+                str = getArticlesRun("http://202.120.40.139:8082/traveller/Article/MostViewed?number=10&offset=0");
                 if(!str.isEmpty()) {
                     Message msg = new Message();
                     Bundle data = new Bundle();
-                    data.putString("get_all_articles_response", str);
+                    data.putString("get_hot_articles_response", str);
                     msg.setData(data);
                     article_handler.sendMessage(msg);
                 }

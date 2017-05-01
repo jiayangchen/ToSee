@@ -52,7 +52,6 @@ public class LoginActivity extends AppCompatActivity {
         jumpRegBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new Thread(getAllArticles).start();
                 /*startActivity(new Intent(LoginActivity.this,RegisterActivity.class));
                 finish();*/
             }
@@ -77,7 +76,7 @@ public class LoginActivity extends AppCompatActivity {
                         //Toast.makeText(LoginActivity.this,user_hash,Toast.LENGTH_LONG).show();
                         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                         intent.putExtra("user_hash",user_hash);
-                        Toast.makeText(LoginActivity.this,user_hash,Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(LoginActivity.this,user_hash,Toast.LENGTH_SHORT).show();
                         startActivity(intent);
                         finish();
                     }
@@ -127,54 +126,4 @@ public class LoginActivity extends AppCompatActivity {
             throw new IOException("Unexpected code " + response);
         }
     }
-
-
-    Handler article_handler = new Handler() {
-        @Override
-        public void handleMessage(Message msg) {
-            super.handleMessage(msg);
-            Bundle data = msg.getData();
-            String val = data.getString("get_all_articles_response");
-            Log.d("HHH","进行到这");
-            Toast.makeText(LoginActivity.this, val, Toast.LENGTH_SHORT).show();
-        }
-    };
-
-    Runnable getAllArticles = new Runnable() {
-        @Override
-        public void run() {
-            // TODO
-            String str = null;
-            try {
-                str = getArticlesRun("http://202.120.40.139:8082/traveller/Article/MostViewed?number=10&offset=0");
-                if(!str.isEmpty()) {
-                    Message msg = new Message();
-                    Bundle data = new Bundle();
-                    data.putString("get_all_articles_response", str);
-                    msg.setData(data);
-                    article_handler.sendMessage(msg);
-                }
-            } catch (IOException e) {
-                //Toast.makeText(LoginActivity.this,e.getMessage(),Toast.LENGTH_SHORT).show();
-                e.printStackTrace();
-            }
-        }
-    };
-
-    OkHttpClient client1 = new OkHttpClient();
-    String getArticlesRun(String url) throws IOException {
-        Request request = new Request.Builder()
-                .addHeader("User-Hash","1185566514")
-                .addHeader("Username","liangdong")
-                .url(url)
-                .build();
-        Response response = client1.newCall(request).execute();
-        if (response.isSuccessful()) {
-            return response.body().string();
-        } else {
-            throw new IOException("Unexpected code " + response);
-        }
-    }
-
-
 }

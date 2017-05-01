@@ -6,6 +6,8 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Environment;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
@@ -20,7 +22,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.facebook.drawee.view.SimpleDraweeView;
+import com.squareup.okhttp.MediaType;
+import com.squareup.okhttp.OkHttpClient;
+import com.squareup.okhttp.Request;
+import com.squareup.okhttp.RequestBody;
+import com.squareup.okhttp.Response;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.w3c.dom.Text;
@@ -32,6 +40,7 @@ import java.io.IOException;
 
 public class ReadActivity extends AppCompatActivity {
 
+    private String arId;
     private String[] readimgs = {
             "http://o9oomuync.bkt.clouddn.com/findTIM%E6%88%AA%E5%9B%BE20170420223230.png",
             "http://o9oomuync.bkt.clouddn.com/findTIM%E6%88%AA%E5%9B%BE20170420223346.png",
@@ -56,6 +65,10 @@ public class ReadActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         String jsonStr = intent.getStringExtra("ar_json");
+        arId = intent.getStringExtra("ar_id");
+
+        new Thread(readArticle).start();
+
         JSONObject json = new JSONObject(jsonStr);
 
         LinearLayout linearLayout = (LinearLayout) findViewById(R.id.read_imgs);
@@ -97,8 +110,51 @@ public class ReadActivity extends AppCompatActivity {
         });
 
         read_author.setText(json.getJSONObject("ar_author").getString("u_name"));
-        read_publish_time.setText(json.getJSONObject("ar_time_list").getString("ar_time"));
+        read_publish_time.setText("2017年04月17日");
         read_title.setText(json.getString("ar_title"));
         read_content.setText(json.getString("ar_content"));
     }
+
+    Handler handler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            Bundle data = msg.getData();
+            String val = data.getString("value");
+            Log.i("read_article", "请求结果为-->" + val);
+            //Toast.makeText(ReadActivity.this,val,Toast.LENGTH_SHORT).show();
+        }
+    };
+
+    Runnable readArticle = new Runnable() {
+        @Override
+        public void run() {
+            String reg_url = "http://202.120.40.139:8082/traveller/Article/"+arId+"/Read";
+            try {
+                String reg_res = post(reg_url);
+                Message msg = new Message();
+                Bundle data = new Bundle();
+                data.putString("value", reg_res);
+                msg.setData(data);
+                handler.sendMessage(msg);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    };
+
+    public static final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
+    OkHttpClient client = new OkHttpClient();
+    String post(String url) throws IOException {
+        RequestBody body = RequestBody.create(JSON, "");
+        Request request = new Request.Builder()
+                .addHeader("User-Hash","1185566514")
+                .addHeader("Username","liangdong")
+                .url(url)
+                .post(body)
+                .build();
+        Response response = client.newCall(request).execute();
+        return response.body().string();
+    }
+
 }
